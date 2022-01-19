@@ -1,21 +1,12 @@
 ---
-project:
-  repo: https://github.com/ggicci/io4examples.git
+workspace:
+  image: ggicci/io4-go:1.16
   title: IO4 Example for Go
   description: Develop in Go language on IO4.
-  template: ggicci/io4-go:1.16
-  environments: # defined by the template, should read their docs
-    REPO_URL:
-      type: string
-      required: true
-      default: "{{ io4.project.repo }}"
-      description: The repository to clone.
-    GIT_AUTHOR:
-      type: string
-      required: true
-      default: "{{ io4.user.name }}"
-      description: Name of the commit author.
-    GIT_EMAIL:
-      type: string
-      required: true
-      description: Email of the commit author.
+  environments: # some may defined by the image, should read their docs
+    REPO_URL: git@github.com:ggicci/io4examples
+    GIT_AUTHOR: '{{ io4.user.login }}'
+    CUSTOM_KEY:
+      required: false
+      description: "Used by the workspace config itself, not defined by the image."
+      default: 100
