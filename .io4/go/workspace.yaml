@@ -1,8 +1,7 @@
 ---
 workspace:
-  image: ggicci/io4-go:1.16
-  title: IO4 Example for Go
-  description: Develop in Go language on IO4.
+  image: io4io/go-1.16.13:1.0.0
+  title: IO4 Workspace Demo for Go Development
   environments: # some may defined by the image, should read their docs
     REPO_URL: git@github.com:ggicci/io4examples
     GIT_AUTHOR: '{{ io4.user.login }}'
