@@ -3,9 +3,11 @@ workspace:
   image: io4io/go-1.16.13:1.0.0
   title: IO4 Workspace Demo for Go Development
   environments: # some may defined by the image, should read their docs
-    REPO_URL: git@github.com:ggicci/io4examples
-    GIT_AUTHOR: '{{ io4.user.login }}'
-    CUSTOM_KEY:
+    - key: REPO_URL
+      value: git@github.com:ggicci/io4examples
+    - key: GIT_AUTHOR
+      value: '{{ io4.user.login }}'
+    - key: CUSTOM_KEY
       required: false
       description: "Used by the workspace config itself, not defined by the image."
       default: 100
